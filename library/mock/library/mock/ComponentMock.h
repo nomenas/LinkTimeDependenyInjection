@@ -7,12 +7,20 @@
 
 #include <library/Component.h>
 #include <iostream>
+#include <string>
 
 class ComponentMock : public Component {
 public:
   void method() override {
-    std::cout << "Hello world from mock world" << std::endl;
+    std::cout << "Hello from test environment. My test wants to tell you '" << message_ << "'" << std::endl;
   };
+
+  void set_message(std::string message) {
+    message_ = std::move(message);
+  }
+
+private:
+  std::string message_;
 };
 
 #endif // FACTORY_COMPONENTMOCK_H

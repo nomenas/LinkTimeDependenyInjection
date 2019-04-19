@@ -14,5 +14,5 @@ target_link_libraries(${PROJECT_NAME}_factory PUBLIC util)
 
 file(GLOB_RECURSE MOCK_FACTORY_SOURCES "mock/factory/*.cpp")
 add_library(${PROJECT_NAME}_mock STATIC ${MOCK_FACTORY_SOURCES})
-target_include_directories(${PROJECT_NAME}_mock PUBLIC mock include)
+target_include_directories(${PROJECT_NAME}_mock PUBLIC mock include ${Boost_INCLUDE_DIRS})
 target_link_libraries(${PROJECT_NAME}_mock PUBLIC util)
